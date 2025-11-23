@@ -8,7 +8,7 @@ metadata:
 
   labels:
     project: calculatorapp
-    app: myapp
+    app: calculator-app
 
 spec:
   containers:
