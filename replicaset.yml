@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet 
+metadata:
+  name: calculator-replicaset
+  labels:
+    project: calculatorapp
+    app: myapp 
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      project: calculatorapp
+      app: myapp
+  template:
+    metadata:
+      labels:
+        project: calculatorapp
+        app: myapp
+    spec:
+      containers:
+        - name: my-simple-calculator
+          image: livisekar/simple-calculator:latest
+          ports:
+            - containerPort: 5000
+    
